@@ -25,3 +25,9 @@ public interface IUserContract{
     public Task<bool> UpdateUser(UserUpdateRequestDto user, CancellationToken cancellationToken);
 }
 
+[ServiceContract]
+public interface IBookContract{
+    [OperationContract]
+    public Task<IList<BookResponseDto>> GetBookByName(String Name, CancellationToken cancellationToken);
+}
+
