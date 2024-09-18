@@ -7,19 +7,24 @@ public class GroupService : IGroupService
 {
     private readonly IGroupRepository _groupRepository;
 
-    public GroupService(IGroupRepository groupRepository){
+    public GroupService(IGroupRepository groupRepository)
+    {
         _groupRepository = groupRepository;
     }
+
     public async Task<GroupUserModel> GetGroupByIdAsync(string id, CancellationToken cancellationToken)
     {
         var group = await _groupRepository.GetByIdAsync(id, cancellationToken);
-        if(group is null){
+
+        if(group == null)
+        {
             return null;
         }
-        return new GroupUserModel{
+
+        return new GroupUserModel {
             Id = group.Id,
             Name = group.Name,
-            CreationDate = group.CreationDate
+            CreationDate = group.CreatedAt
         };
     }
 }

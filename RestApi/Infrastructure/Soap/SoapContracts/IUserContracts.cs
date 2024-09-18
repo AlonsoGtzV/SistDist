@@ -15,5 +15,7 @@ public interface IUserContract{
 
     [OperationContract]
     public Task<bool> DeleteUserById(Guid userId, CancellationToken cancellationToken);
+    
+    
 }
 
