@@ -1,17 +1,17 @@
 using System.Runtime.Serialization;
 
 namespace RestApi.Infrastructure.Soap;
-
 [DataContract]
-public class UserResponseDto{
+public class UserResponseDto
+{
     [DataMember]
-    public Guid Id {get; set;}
+    public Guid UserId {get; set; }
     [DataMember]
-    public string Email {get; set;} = null;
+    public string Email {get; set;} = null!;
     [DataMember]
-    public string FirstName {get; set;} = null;
+    public string FirstName {get; set; } = null!;
     [DataMember]
-    public string LastName {get; set;} = null;
+    public string LastName {get; set; } = null!;
     [DataMember]
-    public DateTime BirthDate {get; set;}
+    public DateTime BirthDate {get; set; }
 }

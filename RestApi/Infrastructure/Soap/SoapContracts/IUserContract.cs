@@ -6,16 +6,13 @@ namespace RestApi.Infrastructure.Soap.SoapContracts;
 public interface IUserContract{
     [OperationContract]
     public Task<UserResponseDto> GetUserById(Guid userId, CancellationToken cancellationToken);
-    
+
     [OperationContract]
     public Task<IList<UserResponseDto>> GetAll(CancellationToken cancellationToken);
 
     [OperationContract]
-    public Task<IList<UserResponseDto>> GetAllByEmail(String Email, CancellationToken cancellationToken);
+    public Task<IList<UserResponseDto>> GetAllByEmail(string email, CancellationToken cancellationToken);
 
     [OperationContract]
     public Task<bool> DeleteUserById(Guid userId, CancellationToken cancellationToken);
-    
-    
 }
-

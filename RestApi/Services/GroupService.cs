@@ -6,25 +6,29 @@ namespace RestApi.Services;
 public class GroupService : IGroupService
 {
     private readonly IGroupRepository _groupRepository;
-
-    public GroupService(IGroupRepository groupRepository)
-    {
+    public GroupService(IGroupRepository groupRepository){
         _groupRepository = groupRepository;
     }
-
-    public async Task<GroupUserModel> GetGroupByIdAsync(string id, CancellationToken cancellationToken)
+    public async Task<GroupUserModel> GetGroupByIdAsync(string Id, CancellationToken cancellationToken)
     {
-        var group = await _groupRepository.GetByIdAsync(id, cancellationToken);
-
-        if(group == null)
-        {
+        var group = await _groupRepository.GetByIdAsync(Id, cancellationToken);
+        if(group is null){
             return null;
         }
-
-        return new GroupUserModel {
+        return new GroupUserModel{
             Id = group.Id,
             Name = group.Name,
-            CreationDate = group.CreatedAt
+            CreationDate = group.CreationDate
         };
+    }
+    public async Task<IEnumerable<GroupUserModel>> GetGroupsByNameAsync(string name, CancellationToken cancellationToken) // Nuevo método
+    {
+        var groups = await _groupRepository.GetByNameAsync(name, cancellationToken);
+        return groups.Select(group => new GroupUserModel
+        {
+            Id = group.Id,
+            Name = group.Name,
+            CreationDate = group.CreationDate
+        });
     }
 }
