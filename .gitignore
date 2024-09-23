@@ -23,29 +23,3 @@
 
 # Go workspace file
 go.work
-
-### .NET ###
-# Build results
-bin/
-obj/
-
-# Visual Studio Code
-.vscode/
-
-# Rider
-.idea/
-
-# User-specific files
-*.rsuser
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# Auto-generated AssemblyInfo files
-HelloWorld/obj/Debug/net8.0/HelloWorld.AssemblyInfo.cs
-HelloWorld/obj/Debug/net8.0/HelloWorld.AssemblyInfoInputs.cache
-HelloWorld/obj/Debug/net8.0/HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
-HelloWorld/obj/Debug/net8.0/HelloWorld.assets.cache
-
-# End of https://www.toptal.com/developers/gitignore/api/go
