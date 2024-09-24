@@ -3,7 +3,14 @@ using SoapApi.Contracts;
 using SoapApi.Dtos;
 using SoapApi.Repositories;
 using SoapApi.Mappers;
+<<<<<<< HEAD
 using SoapApi.Infrastructure.Entities;
+=======
+<<<<<<< HEAD
+using SoapApi.Infrastructure.Entities;
+=======
+>>>>>>> main
+>>>>>>> main
 
 namespace SoapApi.Services;
 
@@ -13,6 +20,10 @@ public class UserService : IUserContract{
     public UserService(IUserRepository UserRepository){
         _userRepository = UserRepository;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
 
     public async Task<UserResponseDto> CreateUser(UserCreateRequestDto userRequest, CancellationToken cancellationToken)
     {
@@ -33,6 +44,12 @@ public class UserService : IUserContract{
     }
 
     public async Task<IList<UserResponseDto>> GetAll(CancellationToken cancellationToken)
+<<<<<<< HEAD
+=======
+=======
+public async Task<IList<UserResponseDto>> GetAll(CancellationToken cancellationToken)
+>>>>>>> main
+>>>>>>> main
 {
     var users = await _userRepository.GetAllAsync(cancellationToken);
     return users.Select(user => user.ToDto()).ToList();
@@ -53,6 +70,10 @@ public async Task<UserResponseDto> GetUserById(Guid userId, CancellationToken ca
     }
     throw new FaultException("User Not Found");
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
 
 public async Task<bool> UpdateUser(UserUpdateRequestDto userUpdate, CancellationToken cancellationToken)
 {
@@ -71,4 +92,9 @@ public async Task<bool> UpdateUser(UserUpdateRequestDto userUpdate, Cancellation
 }
 
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> main
+>>>>>>> main
 }

@@ -6,6 +6,7 @@ public class UserModel{
     public string FirstName {get; set;} = null;
     public string LastName {get; set;} = null;
     public DateTime BirthDate {get; set;}
+<<<<<<< HEAD
 }
 
 public class BookModel{
@@ -14,4 +15,6 @@ public class BookModel{
     public string Author {get; set;} = null;
     public string Publisher {get; set;} = null;
     public DateTime PublishedDate {get; set;}
+=======
+>>>>>>> main
 }

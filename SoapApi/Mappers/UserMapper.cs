@@ -28,6 +28,10 @@ public static class UserMapper{
                 BirthDate = user.BirthDate
             };
         }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
 
     public static UserEntity ToEntity(this UserModel user){
         return new UserEntity{
@@ -59,6 +63,7 @@ public static UserModel ToModel(this UserUpdateRequestDto userUpdateRequest)
         BirthDate = userUpdateRequest.BirthDate
     };
 }
+<<<<<<< HEAD
 
 public static BookResponseDto ToDto(this BookModel book)
 {
@@ -91,4 +96,9 @@ public static BookModel ToModel(this BookEntity bookResponseDto)
     };
 }
     
+=======
+    
+=======
+>>>>>>> main
+>>>>>>> main
 }
