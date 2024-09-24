@@ -28,4 +28,39 @@ public static class UserMapper{
                 BirthDate = user.BirthDate
             };
         }
+<<<<<<< HEAD
+
+    public static UserEntity ToEntity(this UserModel user){
+        return new UserEntity{
+            Id = user.Id,
+            Email = user.Email,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            Birthday = user.BirthDate
+
+        };
+    }
+
+    public static UserModel ToModel(this UserCreateRequestDto user){
+        return new UserModel{
+            Email = user.Email,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            BirthDate = DateTime.UtcNow
+        };
+    }
+
+public static UserModel ToModel(this UserUpdateRequestDto userUpdateRequest)
+{
+    return new UserModel
+    {
+        Id = userUpdateRequest.Id,
+        FirstName = userUpdateRequest.FirstName,
+        LastName = userUpdateRequest.LastName,
+        BirthDate = userUpdateRequest.BirthDate
+    };
+}
+    
+=======
+>>>>>>> main
 }

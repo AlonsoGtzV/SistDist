@@ -2,6 +2,12 @@ using Microsoft.EntityFrameworkCore;
 using SoapApi.Infrastructure;
 using SoapApi.Models;
 using SoapApi.Mappers;
+<<<<<<< HEAD
+using SoapApi.Infrastructure.Entities;
+using System.ServiceModel;
+using System.IdentityModel.Tokens;
+=======
+>>>>>>> main
 
 namespace SoapApi.Repositories;
 
@@ -31,4 +37,40 @@ public class UserRepository : IUserRepository
         var users = await _dbContext.Users.AsNoTracking().Where(users => users.Email.Contains(email)).ToListAsync(cancellationToken);
         return users.Select(user => user.ToModel()).ToList();
     }
+<<<<<<< HEAD
+
+    public async Task DeleteByIdAsync(UserModel user, CancellationToken cancellationToken)
+    {
+        var userEntity = user.ToEntity();
+        _dbContext.Users.Remove(userEntity);
+        await _dbContext.SaveChangesAsync();
+    }
+
+    public async Task<UserModel> CreateAsync(UserModel user, CancellationToken cancellationToken)
+    {
+        var userEntity = user.ToEntity();
+        userEntity.Id = Guid.NewGuid();
+        await _dbContext.AddAsync(userEntity, cancellationToken);
+        await _dbContext.SaveChangesAsync();
+        return userEntity.ToModel();
+    }
+
+    public async Task<bool> UpdateUser(UserModel userUpdate, CancellationToken cancellationToken)
+    {
+        var user = await _dbContext.Users.FindAsync(userUpdate.Id, cancellationToken);
+
+        // Actualiza solo los campos necesarios
+        user.FirstName = userUpdate.FirstName;
+        user.LastName = userUpdate.LastName;
+        user.Birthday = userUpdate.BirthDate;
+
+        _dbContext.Users.Update(user);
+
+        await _dbContext.SaveChangesAsync();
+        return true;
+    }  
+
+
+=======
+>>>>>>> main
 }
