@@ -14,6 +14,7 @@ public interface IUserContract{
 
     [OperationContract]
     public Task<IList<UserResponseDto>> GetAllByEmail(String Email, CancellationToken cancellationToken);
+<<<<<<< HEAD
 
     [OperationContract]
     public Task<bool> DeleteUserById(Guid userId, CancellationToken cancellationToken);
@@ -23,5 +24,7 @@ public interface IUserContract{
 
     [OperationContract]
     public Task<bool> UpdateUser(UserUpdateRequestDto user, CancellationToken cancellationToken);
+=======
+>>>>>>> main
 }
 
