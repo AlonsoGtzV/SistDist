@@ -29,6 +29,9 @@ public static class UserMapper{
             };
         }
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
 
     public static UserEntity ToEntity(this UserModel user){
         return new UserEntity{
@@ -60,7 +63,42 @@ public static UserModel ToModel(this UserUpdateRequestDto userUpdateRequest)
         BirthDate = userUpdateRequest.BirthDate
     };
 }
+<<<<<<< HEAD
+
+public static BookResponseDto ToDto(this BookModel book)
+{
+        return new BookResponseDto{
+            Id = book.Id,
+            Author = book.Author,
+            Title = book.Title,
+            Publisher = book.Publisher,
+            PublishedDate = book.PublishedDate
+            };
+}
+public static BookModel ToModel(this BookResponseDto bookResponseDto){
+    return new BookModel{
+        Id = bookResponseDto.Id,
+        Title = bookResponseDto.Title,
+        Author = bookResponseDto.Author,
+        Publisher = bookResponseDto.Publisher,
+        PublishedDate = bookResponseDto.PublishedDate
+    };
+}
+
+public static BookModel ToModel(this BookEntity bookResponseDto)
+{
+    return new BookModel{
+        Id = bookResponseDto.Id,
+        Title = bookResponseDto.Title,
+        Author = bookResponseDto.Author,
+        Publisher = bookResponseDto.Publisher,
+        PublishedDate = bookResponseDto.PublishedDate
+    };
+}
     
 =======
+    
+=======
+>>>>>>> main
 >>>>>>> main
 }

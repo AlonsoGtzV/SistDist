@@ -10,15 +10,31 @@
 using System;
 using System.Reflection;
 
+<<<<<<< HEAD
+<<<<<<<< HEAD:ChatP2P/obj/Debug/net8.0/ChatP2P.AssemblyInfo.cs
+[assembly: System.Reflection.AssemblyCompanyAttribute("ChatP2P")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+=======
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChatP2P")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 <<<<<<< HEAD
 <<<<<<<< HEAD:ChatP2P/obj/Debug/net8.0/ChatP2P.AssemblyInfo.cs
+>>>>>>> main
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2eacd4baa0da168ccdef2aa685cd435d503b1d8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChatP2P")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChatP2P")]
 ========
+<<<<<<< HEAD
+[assembly: System.Reflection.AssemblyCompanyAttribute("FileDownload")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2eacd4baa0da168ccdef2aa685cd435d503b1d8")]
+[assembly: System.Reflection.AssemblyProductAttribute("FileDownload")]
+[assembly: System.Reflection.AssemblyTitleAttribute("FileDownload")]
+>>>>>>>> main:FileDownload/obj/Debug/net8.0/FileDownload.AssemblyInfo.cs
+=======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dec3bbb70a0d0685851b00d7d7785848f22aaa7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("HelloWorld")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HelloWorld")]
@@ -27,6 +43,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dec3bbb70a0d0685851b00d7d7785848f22aaa7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChatP2P")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChatP2P")]
+>>>>>>> main
 >>>>>>> main
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
