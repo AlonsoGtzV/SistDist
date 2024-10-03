@@ -82,7 +82,13 @@ public class GroupsController : ControllerBase
         catch(GroupAlreadyExistsException){
                 return Conflict(NewValidationProblemDetails("One or more validation errors occurred.", HttpStatusCode.Conflict, new Dictionary<string, string[]>{
                 {"Groups", ["Group with same name already exists"]}
-            }));        }
+            }));        
+        }
+        catch(NonexistentUserId){
+            return NotFound(NewValidationProblemDetails("One or more validation errors occurred.", HttpStatusCode.NotFound, new Dictionary<string, string[]>{
+                {"Groups", ["User ID not found"]}
+            })); 
+        }
     }
 
     private static ValidationProblemDetails NewValidationProblemDetails(string title, 
