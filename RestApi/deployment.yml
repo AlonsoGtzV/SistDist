@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
         - name: groups-api
+
           image: localhost:5000/groups-api:4
           env: 
             - name: "UserServiceEndpoint"
