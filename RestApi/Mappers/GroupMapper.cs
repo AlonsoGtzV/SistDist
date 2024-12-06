@@ -32,7 +32,7 @@ public static List<UserResponse> ToDto(this IEnumerable<UserModel> users)
             Id = group.Id,
             Name = group.Name,
             Users = group.Users,
-            CreatedAt = group.CreatedAt
+            CreationDate = group.CreatedAt
         };
     }
 }
