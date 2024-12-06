@@ -13,7 +13,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IMongoClient, MongoClient>(s => new MongoClient(builder.Configuration.GetValue<string>("MongoDb:Groups:ConnectionString")));
-
 builder.Services.AddScoped<IGroupService, GroupService>();
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -38,6 +37,7 @@ builder.Services.AddAuthorization(options =>{
     options.AddPolicy("Write", policy => policy.RequireClaim("http://schemas.microsoft.com/identity/claims/scope", "write"));
 });    
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -52,4 +52,6 @@ app.UseAuthorization();
 
 app.UseHttpsRedirection();
 app.MapControllers();
+
 app.Run();
+

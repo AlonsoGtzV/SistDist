@@ -97,9 +97,28 @@ public class GroupService : IGroupService
             Users = (await Task.WhenAll(group.Users.Select(userId => _userRepository.GetByIdAsync(userId, cancellationToken)))).Where(user => user != null).ToList()
         };
     }
+    public async Task UpdateGroupAsync(string id, string name, Guid[] users, CancellationToken cancellationToken)
+        {
+            if(users.Length == 0){
+                throw new InvalidGroupRequestFormatException();
+            }
+            var group = await _groupRepository.GetByIdAsync(id, cancellationToken);
+            if(group is null){
+                throw new GroupNotFoundException();
+            }
+        
+            var groups = await _groupRepository.GetByExactNameAsync(name, cancellationToken);
+            if(groups is not null && groups.Id != id){
+                throw new GroupAlreadyExistsException();
+            }
+
+            await _groupRepository.UpdateGroupAsync(id, name, users, cancellationToken);
+        }
+
 
     public Task UpdateGroupAsync(string id, string name, Guid[] users, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
 }
+

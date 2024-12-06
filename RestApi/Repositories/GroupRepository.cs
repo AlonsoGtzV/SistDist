@@ -74,4 +74,31 @@ public class GroupRepository : IGroupRepository
         var group = await _groups.Find(filter).FirstOrDefaultAsync(cancellationToken);
         return group.ToModel();
     }
+
+    public async Task UpdateGroupAsync(string id, string name, Guid[] users, CancellationToken cancellationToken)
+    {
+        var filter = Builders<GroupEntity>.Filter.Eq(x => x.Id, id);
+        var update = Builders<GroupEntity>.Update.Set(s => s.Name, name).Set(s => s.Users, users);
+        await _groups.UpdateOneAsync(filter, update, cancellationToken: cancellationToken);    
+    
+    }
+
+
+
+    private readonly IMongoCollection<GroupEntity> _groups;
+
+    public GroupRepository(IMongoClient mongoClient, IConfiguration configuration){
+        var database = mongoClient.GetDatabase(configuration.GetValue<string>("MongoDb:Groups:DatabaseName"));
+        _groups = database.GetCollection<GroupEntity>(configuration.GetValue<string>("MongoDb:Groups:CollectionName"));
+    }
+        public async Task<GroupModel> GetByIdAsync(string id, CancellationToken cancellationToken){
+        try{
+            var filter = Builders<GroupEntity>.Filter.Eq(x => x.Id, id);
+            var group = await _groups.Find(filter).FirstOrDefaultAsync(cancellationToken);
+            return group.ToModel();
+        }catch(FormatException){
+            return null;
+        }
+    }
+
 }

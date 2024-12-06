@@ -22,10 +22,6 @@
 # vendor/
 
 # Go workspace file
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> main
 go.work
 
 ### .NET ###
@@ -53,9 +49,3 @@ HelloWorld/obj/Debug/net8.0/HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
 HelloWorld/obj/Debug/net8.0/HelloWorld.assets.cache
 
 # End of https://www.toptal.com/developers/gitignore/api/go
-<<<<<<< HEAD
-=======
-=======
-go.work
->>>>>>> main
->>>>>>> main

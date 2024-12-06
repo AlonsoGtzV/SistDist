@@ -10,9 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Registrar servicios
 builder.Services.AddSoapCore();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-// builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IUserContract, UserService>();
-// builder.Services.AddScoped<IBookContract, BookService>();
+builder.Services.AddScoped<IBookContract, BookService>();
 builder.Services.AddDbContext<RelationalDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
     ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));

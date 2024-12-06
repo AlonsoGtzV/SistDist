@@ -3,14 +3,7 @@ using SoapApi.Contracts;
 using SoapApi.Dtos;
 using SoapApi.Repositories;
 using SoapApi.Mappers;
-<<<<<<< HEAD
 using SoapApi.Infrastructure.Entities;
-=======
-<<<<<<< HEAD
-using SoapApi.Infrastructure.Entities;
-=======
->>>>>>> main
->>>>>>> main
 
 namespace SoapApi.Services;
 
@@ -20,10 +13,6 @@ public class UserService : IUserContract{
     public UserService(IUserRepository UserRepository){
         _userRepository = UserRepository;
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> main
 
     public async Task<UserResponseDto> CreateUser(UserCreateRequestDto userRequest, CancellationToken cancellationToken)
     {
@@ -44,16 +33,10 @@ public class UserService : IUserContract{
     }
 
     public async Task<IList<UserResponseDto>> GetAll(CancellationToken cancellationToken)
-<<<<<<< HEAD
-=======
-=======
-public async Task<IList<UserResponseDto>> GetAll(CancellationToken cancellationToken)
->>>>>>> main
->>>>>>> main
-{
+    {
     var users = await _userRepository.GetAllAsync(cancellationToken);
     return users.Select(user => user.ToDto()).ToList();
-}
+    }
 
 public async Task<IList<UserResponseDto>> GetAllByEmail(string email, CancellationToken cancellationToken)
 {
@@ -70,31 +53,22 @@ public async Task<UserResponseDto> GetUserById(Guid userId, CancellationToken ca
     }
     throw new FaultException("User Not Found");
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> main
 
-public async Task<bool> UpdateUser(UserUpdateRequestDto userUpdate, CancellationToken cancellationToken)
-{
-    var user = userUpdate.ToModel(); 
-    
-    var existingUser = await _userRepository.GetByIdAsync(user.Id, cancellationToken);
-
-    if (existingUser is null)
+    public async Task<bool> UpdateUser(UserUpdateRequestDto userUpdate, CancellationToken cancellationToken)
     {
-        throw new FaultException("User not found");
+        var user = userUpdate.ToModel(); 
+        
+        var existingUser = await _userRepository.GetByIdAsync(user.Id, cancellationToken);
+
+        if (existingUser is null)
+        {
+            throw new FaultException("User not found");
+        }
+        else
+        {
+            return await _userRepository.UpdateUser(user, cancellationToken);
+        }
     }
-    else
-    {
-        return await _userRepository.UpdateUser(user, cancellationToken);
-    }
-}
 
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> main
->>>>>>> main
 }
