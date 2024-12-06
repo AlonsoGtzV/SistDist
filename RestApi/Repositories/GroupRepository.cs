@@ -84,7 +84,6 @@ public class GroupRepository : IGroupRepository
     }
 
 
-
     private readonly IMongoCollection<GroupEntity> _groups;
 
     public GroupRepository(IMongoClient mongoClient, IConfiguration configuration){

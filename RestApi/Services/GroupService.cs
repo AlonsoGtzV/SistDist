@@ -71,6 +71,17 @@ public class GroupService : IGroupService
         if(groups is not null){
             throw new GroupAlreadyExistsException();
         }
+        foreach (var userId in users)
+            {
+                var user = await _userRepository.GetByIdAsync(userId, cancellationToken);
+                if (user is null)
+                {
+                    throw new NonexistentUserId();    
+                }
+            }
+            
+        
+
         var group = await _groupRepository.CreateAsync(name, users, cancellationToken);
         return new GroupUserModel{
             Id = group.Id,
@@ -110,6 +121,15 @@ public class GroupService : IGroupService
             var groups = await _groupRepository.GetByExactNameAsync(name, cancellationToken);
             if(groups is not null && groups.Id != id){
                 throw new GroupAlreadyExistsException();
+            }
+
+            foreach (var userId in users)
+            {
+                var user = await _userRepository.GetByIdAsync(userId, cancellationToken);
+                if (user is null)
+                {
+                    throw new NonexistentUserId();    
+                }
             }
 
             await _groupRepository.UpdateGroupAsync(id, name, users, cancellationToken);
