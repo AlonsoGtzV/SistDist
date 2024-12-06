@@ -2,18 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using SoapApi.Infrastructure;
 using SoapApi.Models;
 using SoapApi.Mappers;
-<<<<<<< HEAD
 using SoapApi.Infrastructure.Entities;
 using System.ServiceModel;
 using System.IdentityModel.Tokens;
-=======
-<<<<<<< HEAD
-using SoapApi.Infrastructure.Entities;
-using System.ServiceModel;
-using System.IdentityModel.Tokens;
-=======
->>>>>>> main
->>>>>>> main
 
 namespace SoapApi.Repositories;
 
@@ -43,10 +34,7 @@ public class UserRepository : IUserRepository
         var users = await _dbContext.Users.AsNoTracking().Where(users => users.Email.Contains(email)).ToListAsync(cancellationToken);
         return users.Select(user => user.ToModel()).ToList();
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> main
+
 
     public async Task DeleteByIdAsync(UserModel user, CancellationToken cancellationToken)
     {
@@ -80,9 +68,4 @@ public class UserRepository : IUserRepository
     }  
 
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> main
->>>>>>> main
 }
