@@ -7,6 +7,7 @@ using SoapCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Registrar servicios
 builder.Services.AddSoapCore();
 builder.Services.AddScoped<IUserRepository, UserRepository>();

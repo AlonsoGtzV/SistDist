@@ -15,6 +15,7 @@ public interface IUserContract{
     [OperationContract]
     public Task<IList<UserResponseDto>> GetAllByEmail(String Email, CancellationToken cancellationToken);
 
+
     [OperationContract]
     public Task<bool> DeleteUserById(Guid userId, CancellationToken cancellationToken);
 
@@ -23,11 +24,5 @@ public interface IUserContract{
 
     [OperationContract]
     public Task<bool> UpdateUser(UserUpdateRequestDto user, CancellationToken cancellationToken);
-}
 
-[ServiceContract]
-public interface IBookContract{
-    [OperationContract]
-    public Task<IList<BookResponseDto>> GetBookByName(String Name, CancellationToken cancellationToken);
 }
-
