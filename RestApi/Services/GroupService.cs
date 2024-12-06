@@ -116,5 +116,9 @@ public class GroupService : IGroupService
         }
 
 
+    public Task UpdateGroupAsync(string id, string name, Guid[] users, CancellationToken cancellationToken)
+    {
+        throw new NotImplementedException();
+    }
 }
 
