@@ -13,6 +13,7 @@ public static class GroupMapper{
             Users = group.Users.ToDto()
         };
     }
+
 public static List<UserResponse> ToDto(this IEnumerable<UserModel> users)
 {
     return users?.Select(s => new UserResponse

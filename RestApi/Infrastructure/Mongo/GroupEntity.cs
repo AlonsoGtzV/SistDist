@@ -10,5 +10,4 @@ public class GroupEntity{
     public string Name {get; set;}
     public DateTime CreatedAt {get; set;}
     public Guid[] Users {get; set;}
-
 }

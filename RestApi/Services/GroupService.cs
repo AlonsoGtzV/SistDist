@@ -8,6 +8,7 @@ namespace RestApi.Services;
 public class GroupService : IGroupService
 {
     private readonly IGroupRepository _groupRepository;
+
     private readonly IUserRepository _userRepository;
 
     public GroupService(IGroupRepository groupRepository, IUserRepository userRepository)
@@ -141,4 +142,3 @@ public class GroupService : IGroupService
         throw new NotImplementedException();
     }
 }
-

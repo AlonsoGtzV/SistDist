@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using RestApi.Dtos;
 using RestApi.Services;
@@ -14,7 +15,6 @@ namespace RestApi.Controllers;
 public class GroupsController : ControllerBase
 {
     private readonly IGroupService _groupService;
-
     public GroupsController(IGroupService groupService)
     {
         _groupService = groupService;
