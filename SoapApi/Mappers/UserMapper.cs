@@ -29,6 +29,7 @@ public static class UserMapper{
             };
         }
 
+
     public static UserEntity ToEntity(this UserModel user){
         return new UserEntity{
             Id = user.Id,
@@ -60,6 +61,7 @@ public static UserModel ToModel(this UserUpdateRequestDto userUpdateRequest)
     };
 }
 
+
 public static BookResponseDto ToDto(this BookModel book)
 {
         return new BookResponseDto{
@@ -90,5 +92,5 @@ public static BookModel ToModel(this BookEntity bookResponseDto)
         PublishedDate = bookResponseDto.PublishedDate
     };
 }
-    
+
 }
